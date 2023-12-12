@@ -34,13 +34,21 @@ const Navbar = () => {
                                                      className={buttonVariants({variant: "ghost"})}
                                 >Sign In</Link>}
                                 {user ? null : (<span className="h-6 w-px bg-gray-200"
-                                                     aria-hidden="true"/>)}
+                                                      aria-hidden="true"/>)}
                                 {user ? (<p></p>) : (<Link href="/signup"
-                                                        className={buttonVariants({variant: "ghost",})}>
-                                    Create Account
-                                </Link>
-                                    )}
-                                {}
+                                                           className={buttonVariants({variant: "ghost",})}>
+                                        Create Account
+                                    </Link>
+                                )}
+                                {user ? (<span className="h-6 w-px bg-gray-200"
+                                               aria-hidden="true"/>) : null}
+                                {user ? null : (<div className="flex lg:ml-6">
+                                    <span className="h-6 w-px bg-gray-200"
+                                          aria-hidden="true"/>
+                                </div>)}
+                                <div className="ml-4 flow-root lg:ml-6">
+                                    <Cart/>
+                                </div>
                             </div>
                         </div>
                     </div>
