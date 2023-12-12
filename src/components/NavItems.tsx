@@ -4,6 +4,7 @@ import {number} from "prop-types";
 import {useRef, useState} from "react";
 import {PRODUCT_CATEGORIES} from "@/config/Index";
 import NavItem from "@/components/NavItem";
+import {useOnClickOutside} from "@/hooks/use_on_click_outside";
 
 const NavItems = () => {
     const [activeIndex, setActiveIndex] = useState<null | number>(null)
@@ -12,8 +13,10 @@ const NavItems = () => {
 
     const navRef = useRef<HTMLDivElement>(null)
 
+    useOnClickOutside(navRef, () => setActiveIndex(null))
+
     return (
-        <div className="flex gap-4 h-full">
+        <div className="flex gap-4 h-full" ref={navRef}>
             {PRODUCT_CATEGORIES.map((category, i) => {
                 const handleOpen = () => {
                     if (activeIndex === i) {
