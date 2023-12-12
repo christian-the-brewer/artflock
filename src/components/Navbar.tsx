@@ -5,6 +5,7 @@ import NavItems from "@/components/NavItems";
 import Image from "next/image";
 import birdLogo from "../../public/navbar/icons/bird_logo.svg"
 import {buttonVariants} from "@/components/ui/button";
+import Cart from "./Cart";
 
 
 const Navbar = () => {
