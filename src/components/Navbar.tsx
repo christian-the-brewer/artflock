@@ -2,6 +2,9 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import {Icons} from "@/components/Icons";
 import NavItems from "@/components/NavItems";
+import Image from "next/image";
+import birdLogo from "../../public/navbar/icons/bird_logo.svg"
+
 
 const Navbar = () => {
    return (
@@ -13,7 +16,10 @@ const Navbar = () => {
                             {/* TODO: Mobile Navbar*/}
                             <div className="ml-4 flex lg:ml-0">
                                 <Link href="/">
-                                    <Icons.logo className="h-10 w-10" />
+                                    {/*<Icons.logo className="h-10 w-10" />*/}
+                                    <Image src={birdLogo} alt="bird logo"
+                                    className="h-20 w-20"
+                                    />
                                 </Link>
                             </div>
                             <div className="hidden z-50 lg:ml-8 lg:block lg:self-stretch">
