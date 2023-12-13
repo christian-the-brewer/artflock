@@ -1,7 +1,8 @@
 import express from "express"
-import {getPayloadClient} from "@/get_payload";
-import {nextApp, nextHandler} from "@/next_utils";
+
+import {nextApp, nextHandler} from "./next_utils";
 import {res} from "pino-std-serializers";
+import {getPayloadClient} from "./get_payload";
 
 const app = express()
 const PORT = Number(process.env.PORT) || 3000
