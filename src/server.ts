@@ -1,9 +1,9 @@
 import express from "express"
 import {nextApp, nextHandler} from "./next_utils";
-import {res} from "pino-std-serializers";
 import {getPayloadClient} from "./get_payload";
 import * as trpcExpress from "@trpc/server/adapters/express"
-import {appRouter} from "@/trpc";
+import {appRouter} from "./trpc";
+
 
 const app = express()
 const PORT = Number(process.env.PORT) || 3000
