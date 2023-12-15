@@ -13,7 +13,7 @@ export const authRouter = router({
 
         //check for user
         const {docs: users} = await payload.find({
-            collection: "user",
+            collection: "users",
             where: {
                 email: {
                     equals: email
@@ -24,8 +24,12 @@ export const authRouter = router({
         if (users.length !== 0) throw new TRPCError(({code: "CONFLICT"}))
         await payload.create({
             collection: "users",
-            data: {},
+            data: {
+                email,
+                password,
+                role:"user",
+            },
         })
-
+    return { success:true, sentToEmail: email }
     })
 })
